@@ -9,11 +9,21 @@ import org.springframework.stereotype.Service;
 public class ImagesMapperImpl implements ImagesMapper {
     @Override
     public Images toImages(ImagesDto imagesDto) {
-        return null;
+        Images images = new Images();
+        images.setId(imagesDto.getId());
+        images.setHouse_id(imagesDto.getHouse_id());
+        images.setUrl(imagesDto.getUrl());
+        images.setOrder_num(imagesDto.getOrder_num());
+        return images;
     }
 
     @Override
     public ImagesDto toImagesDto(Images images) {
-        return null;
+        ImagesDto imagesDto = new ImagesDto();
+        imagesDto.setId(images.getId());
+        imagesDto.setHouse_id(images.getHouse_id());
+        imagesDto.setUrl(images.getUrl());
+        imagesDto.setOrder_num(images.getOrder_num());
+        return imagesDto;
     }
 }

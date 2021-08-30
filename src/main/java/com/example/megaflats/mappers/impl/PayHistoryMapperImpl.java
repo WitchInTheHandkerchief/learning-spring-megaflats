@@ -9,11 +9,21 @@ import org.springframework.stereotype.Service;
 public class PayHistoryMapperImpl implements PayHistoryMapper {
     @Override
     public PayHistory toPayHistory(PayHistoryDto payHistoryDto) {
-        return null;
+        PayHistory payHistory = new PayHistory();
+        payHistory.setId(payHistoryDto.getId());
+        payHistory.setReserve_history_id(payHistoryDto.getReserve_history_id());
+        payHistory.setCash(payHistoryDto.getCash());
+        payHistory.setAdd_date(payHistoryDto.getAdd_date());
+        return payHistory;
     }
 
     @Override
     public PayHistoryDto toPayHistoryDto(PayHistory payHistory) {
-        return null;
+        PayHistoryDto payHistoryDto = new PayHistoryDto();
+        payHistoryDto.setId(payHistory.getId());
+        payHistoryDto.setReserve_history_id(payHistory.getReserve_history_id());
+        payHistoryDto.setCash(payHistory.getCash());
+        payHistoryDto.setAdd_date(payHistory.getAdd_date());
+        return payHistoryDto;
     }
 }

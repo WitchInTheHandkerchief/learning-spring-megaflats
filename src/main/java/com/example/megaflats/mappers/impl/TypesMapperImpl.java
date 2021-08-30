@@ -9,11 +9,19 @@ import org.springframework.stereotype.Service;
 public class TypesMapperImpl implements TypesMapper {
     @Override
     public Types toTypes(TypesDto typesDto) {
-        return null;
+        Types types = new Types();
+        types.setId(typesDto.getId());
+        types.setName(typesDto.getName());
+        types.setActive(typesDto.isActive());
+        return types;
     }
 
     @Override
     public TypesDto toTypesDto(Types types) {
-        return null;
+        TypesDto typesDto = new TypesDto();
+        typesDto.setId(types.getId());
+        typesDto.setName(types.getName());
+        typesDto.setActive(types.isActive());
+        return typesDto;
     }
 }

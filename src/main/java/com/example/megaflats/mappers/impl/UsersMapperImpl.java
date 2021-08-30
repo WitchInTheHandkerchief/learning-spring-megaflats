@@ -9,11 +9,19 @@ import org.springframework.stereotype.Service;
 public class UsersMapperImpl implements UsersMapper {
     @Override
     public Users toUsers(UsersDto usersDto) {
-        return null;
+        Users users = new Users();
+        users.setId(usersDto.getId());
+        users.setPhone(usersDto.getPhone());
+        users.setBlock_date(usersDto.getBlock_date());
+        return users;
     }
 
     @Override
     public UsersDto toUsersDto(Users users) {
-        return null;
+        UsersDto usersDto = new UsersDto();
+        usersDto.setId(users.getId());
+        usersDto.setPhone(users.getPhone());
+        usersDto.setBlock_date(users.getBlock_date());
+        return usersDto;
     }
 }

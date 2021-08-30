@@ -9,11 +9,17 @@ import org.springframework.stereotype.Service;
 public class RegionsMapperImpl implements RegionsMapper {
     @Override
     public Regions toRegions(RegionsDto regionsDto) {
-        return null;
+        Regions regions = new Regions();
+        regions.setId(regionsDto.getId());
+        regions.setName(regionsDto.getName());
+        return regions;
     }
 
     @Override
     public RegionsDto toRegionsDto(Regions regions) {
-        return null;
+        RegionsDto regionsDto = new RegionsDto();
+        regionsDto.setId(regions.getId());
+        regionsDto.setName(regions.getName());
+        return regionsDto;
     }
 }

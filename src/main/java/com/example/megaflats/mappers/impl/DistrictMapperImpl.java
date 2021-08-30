@@ -9,11 +9,19 @@ import org.springframework.stereotype.Service;
 public class DistrictMapperImpl implements DistrictMapper {
     @Override
     public District toDistrict(DistrictDto districtDto) {
-        return null;
+        District district = new District();
+        district.setId(districtDto.getId());
+        district.setCity_village_id(districtDto.getCity_village_id());
+        district.setName(districtDto.getName());
+        return district;
     }
 
     @Override
     public DistrictDto toDistrictDto(District district) {
-        return null;
+        DistrictDto districtDto = new DistrictDto();
+        districtDto.setId(district.getId());
+        districtDto.setCity_village_id(district.getCity_village_id());
+        districtDto.setName(district.getName());
+        return districtDto;
     }
 }

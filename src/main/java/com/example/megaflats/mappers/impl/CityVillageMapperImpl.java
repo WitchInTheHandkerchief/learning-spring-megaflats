@@ -9,11 +9,19 @@ import org.springframework.stereotype.Service;
 public class CityVillageMapperImpl implements CityVillageMapper {
     @Override
     public CityVillage toCityVillage(CityVillageDto cityVillageDto) {
-        return null;
+        CityVillage cityVillage = new CityVillage();
+        cityVillage.setId(cityVillageDto.getId());
+        cityVillage.setRegions_id(cityVillageDto.getRegions_id());
+        cityVillage.setName(cityVillageDto.getName());
+        return cityVillage;
     }
 
     @Override
     public CityVillageDto toCityVillageDto(CityVillage cityVillage) {
-        return null;
+        CityVillageDto cityVillageDto = new CityVillageDto();
+        cityVillageDto.setId(cityVillage.getId());
+        cityVillageDto.setRegions_id(cityVillage.getRegions_id());
+        cityVillageDto.setName(cityVillage.getName());
+        return cityVillageDto;
     }
 }
