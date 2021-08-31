@@ -11,6 +11,18 @@ import org.springframework.stereotype.Service;
 @Service
 public class HouseMapperImpl implements HouseMapper {
 
+    @Autowired
+    private TypesRepo typesRepo;
+
+    @Autowired
+    private UsersRepo usersRepo;
+
+    @Autowired
+    private CityVillageRepo cityVillageRepo;
+
+    @Autowired
+    private DistrictRepo districtRepo;
+
     @Override
     public House toHouse(HouseDto houseDto) {
         House house = new House();
@@ -65,8 +77,12 @@ public class HouseMapperImpl implements HouseMapper {
         houseDto.setFloor(houseReciever.getFloor());
         houseDto.setArea(houseReciever.getArea());
         houseDto.setPrice(houseReciever.getPrice());
+        houseDto.setTypes_id(typesRepo.findTypesById(houseReciever.getTypes_id()));
         houseDto.setInternet(houseReciever.isInternet());
         houseDto.setFurniture(houseReciever.isFurniture());
+        houseDto.setUsers_id(usersRepo.findUsersById(houseReciever.getUsers_id()));
+        houseDto.setCity_village_id(cityVillageRepo.findCityVillageById(houseReciever.getCity_village_id()));
+        houseDto.setDistrict_id(districtRepo.findDistrictById(houseReciever.getDistrict_id()));
         houseDto.setLat(houseReciever.getLat());
         houseDto.setLon(houseReciever.getLon());
         houseDto.setAddress(houseReciever.getAddress());
