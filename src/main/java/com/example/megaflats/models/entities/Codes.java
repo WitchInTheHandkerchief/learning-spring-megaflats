@@ -1,6 +1,7 @@
 package com.example.megaflats.models.entities;
 
 import com.example.megaflats.models.enums.CodeStatus;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -15,8 +16,10 @@ public class Codes {
 
     private Long code;
 
+    @JsonFormat(pattern="dd-MM-yyyy")
     private LocalDate start_date;
 
+    @JsonFormat(pattern="dd-MM-yyyy")
     private LocalDate end_date;
 
     @Enumerated(EnumType.STRING)

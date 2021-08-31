@@ -1,17 +1,18 @@
-package com.example.megaflats.models.dto;
+package com.example.megaflats.models.recievers;
 
 import com.example.megaflats.models.entities.CityVillage;
 import com.example.megaflats.models.entities.District;
 import com.example.megaflats.models.entities.Types;
 import com.example.megaflats.models.entities.Users;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Data
-public class HouseDto {
-    private Long id;
+public class HouseReciever {
 
     private int rooms;
 
@@ -23,21 +24,17 @@ public class HouseDto {
 
     private int price;
 
-    private Types types_id;
+    private Long types_id;
 
     private boolean internet;
 
     private boolean furniture;
 
-    private Users users_id;
+    private Long users_id;
 
-    private CityVillage city_village_id;
+    private Long city_village_id;
 
-    private District district_id;
-
-    private LocalDate add_date;
-
-    private LocalDate edit_date;
+    private Long district_id;
 
     private double lat;
 

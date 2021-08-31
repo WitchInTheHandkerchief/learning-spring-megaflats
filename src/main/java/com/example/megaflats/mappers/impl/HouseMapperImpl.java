@@ -1,12 +1,16 @@
 package com.example.megaflats.mappers.impl;
 
+import com.example.megaflats.dao.*;
 import com.example.megaflats.mappers.HouseMapper;
 import com.example.megaflats.models.dto.HouseDto;
 import com.example.megaflats.models.entities.House;
+import com.example.megaflats.models.recievers.HouseReciever;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class HouseMapperImpl implements HouseMapper {
+
     @Override
     public House toHouse(HouseDto houseDto) {
         House house = new House();
@@ -50,6 +54,22 @@ public class HouseMapperImpl implements HouseMapper {
         houseDto.setLat(house.getLat());
         houseDto.setLon(house.getLon());
         houseDto.setAddress(house.getAddress());
+        return houseDto;
+    }
+
+    @Override
+    public HouseDto toHouseDtoFromReciever(HouseReciever houseReciever) {
+        HouseDto houseDto = new HouseDto();
+        houseDto.setRooms(houseReciever.getRooms());
+        houseDto.setDescription(houseReciever.getDescription());
+        houseDto.setFloor(houseReciever.getFloor());
+        houseDto.setArea(houseReciever.getArea());
+        houseDto.setPrice(houseReciever.getPrice());
+        houseDto.setInternet(houseReciever.isInternet());
+        houseDto.setFurniture(houseReciever.isFurniture());
+        houseDto.setLat(houseReciever.getLat());
+        houseDto.setLon(houseReciever.getLon());
+        houseDto.setAddress(houseReciever.getAddress());
         return houseDto;
     }
 }

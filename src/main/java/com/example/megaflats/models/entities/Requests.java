@@ -21,5 +21,5 @@ public class Requests {
 
     @ManyToOne
     @JoinColumn(name = "codes_id")
-    private Code codes_id;
+    private Codes codes_id;
 }

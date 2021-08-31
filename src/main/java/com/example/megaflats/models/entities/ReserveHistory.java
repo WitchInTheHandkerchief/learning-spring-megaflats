@@ -1,6 +1,7 @@
 package com.example.megaflats.models.entities;
 
 import com.example.megaflats.models.enums.Status;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -23,8 +24,10 @@ public class ReserveHistory {
     @JoinColumn(name = "users_id")
     private Users users_id;
 
+    @JsonFormat(pattern="dd-MM-yyyy")
     private LocalDate start_date;
 
+    @JsonFormat(pattern="dd-MM-yyyy")
     private LocalDate end_date;
 
     @Enumerated(EnumType.STRING)

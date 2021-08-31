@@ -1,5 +1,7 @@
 package com.example.megaflats.models.dto;
 
+import com.example.megaflats.models.entities.Codes;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.aspectj.apache.bcel.classfile.Code;
 
@@ -13,5 +15,5 @@ public class RequestsDto {
 
     private boolean success;
 
-    private Code codes_id;
+    private Codes codes_id;
 }

@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TypesRepo extends JpaRepository<Types,Long> {
+    Types findTypesById(Long id);
 }
