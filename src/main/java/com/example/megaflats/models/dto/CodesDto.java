@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 public class CodesDto {
@@ -14,10 +15,10 @@ public class CodesDto {
     private Long code;
 
     @JsonFormat(pattern="dd-MM-yyyy")
-    private LocalDate start_date;
+    private LocalDateTime start_date;
 
     @JsonFormat(pattern="dd-MM-yyyy")
-    private LocalDate end_date;
+    private LocalDateTime end_date;
 
     private CodeStatus code_status;
 

@@ -8,7 +8,7 @@ import java.time.LocalDate;
 public class UsersDto {
     private Long id;
 
-    private String phone;
+    private Long phone;
 
     private LocalDate block_date;
 }

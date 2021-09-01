@@ -4,7 +4,6 @@ import com.example.megaflats.dao.*;
 import com.example.megaflats.mappers.HouseMapper;
 import com.example.megaflats.models.dto.HouseDto;
 import com.example.megaflats.models.entities.House;
-import com.example.megaflats.models.recievers.HouseReciever;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -66,26 +65,6 @@ public class HouseMapperImpl implements HouseMapper {
         houseDto.setLat(house.getLat());
         houseDto.setLon(house.getLon());
         houseDto.setAddress(house.getAddress());
-        return houseDto;
-    }
-
-    @Override
-    public HouseDto toHouseDtoFromReciever(HouseReciever houseReciever) {
-        HouseDto houseDto = new HouseDto();
-        houseDto.setRooms(houseReciever.getRooms());
-        houseDto.setDescription(houseReciever.getDescription());
-        houseDto.setFloor(houseReciever.getFloor());
-        houseDto.setArea(houseReciever.getArea());
-        houseDto.setPrice(houseReciever.getPrice());
-        houseDto.setTypes_id(typesRepo.findTypesById(houseReciever.getTypes_id()));
-        houseDto.setInternet(houseReciever.isInternet());
-        houseDto.setFurniture(houseReciever.isFurniture());
-        houseDto.setUsers_id(usersRepo.findUsersById(houseReciever.getUsers_id()));
-        houseDto.setCity_village_id(cityVillageRepo.findCityVillageById(houseReciever.getCity_village_id()));
-        houseDto.setDistrict_id(districtRepo.findDistrictById(houseReciever.getDistrict_id()));
-        houseDto.setLat(houseReciever.getLat());
-        houseDto.setLon(houseReciever.getLon());
-        houseDto.setAddress(houseReciever.getAddress());
         return houseDto;
     }
 }

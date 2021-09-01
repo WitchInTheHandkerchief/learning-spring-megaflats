@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RequestsRepo extends JpaRepository<Requests,Long> {
+    Long countAllByCodes_idAndSuccess(Long code_id, boolean success);
 }

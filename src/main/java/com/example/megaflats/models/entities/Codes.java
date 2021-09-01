@@ -6,6 +6,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -17,15 +18,15 @@ public class Codes {
     private Long code;
 
     @JsonFormat(pattern="dd-MM-yyyy")
-    private LocalDate start_date;
+    private LocalDateTime start_date;
 
     @JsonFormat(pattern="dd-MM-yyyy")
-    private LocalDate end_date;
+    private LocalDateTime end_date;
 
     @Enumerated(EnumType.STRING)
     private CodeStatus code_status;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "users_id")
     private Users users_id;
 }

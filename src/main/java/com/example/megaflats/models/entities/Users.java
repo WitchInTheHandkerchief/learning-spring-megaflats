@@ -15,7 +15,7 @@ public class Users  {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String phone;
+    private Long phone;
 
     private LocalDate block_date;
 }
